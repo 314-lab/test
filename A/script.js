@@ -4,18 +4,18 @@ const closeButton = document.getElementById('close-menu');
 const sidebar = document.getElementById('sidebar-menu');
 const overlay = document.getElementById('menu-overlay');
 
-// Función para abrir el menú
+// Función para abrir el menú y activar el fondo translúcido
 openButton.addEventListener('click', () => {
     sidebar.classList.add('active');
-    overlay.style.display = 'block'; // Muestra el fondo oscuro
+    overlay.classList.add('active');
 });
 
-// Función para cerrar el menú
+// Función para cerrar el menú y el fondo translúcido
 const closeMenu = () => {
     sidebar.classList.remove('active');
-    overlay.style.display = 'none'; // Oculta el fondo oscuro
+    overlay.classList.remove('active');
 };
 
-// El menú se cierra si haces clic en la 'X' o fuera del menú (en el fondo oscuro)
+// Eventos para cerrar al hacer clic en la 'X' o en el fondo oscuro
 closeButton.addEventListener('click', closeMenu);
 overlay.addEventListener('click', closeMenu);
