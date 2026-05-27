@@ -161,8 +161,9 @@ body {
 .sub-nav a:hover {
     border: 1px solid white;
 }
+
 /* ==========================================
-   4. MENÚ LATERAL Y FONDO OSCURO (CORREGIDO)
+   4. MENÚ LATERAL Y FONDO OSCURO (MÉTODO INALIBLE)
    ========================================== */
 
 /* Fondo oscuro translúcido detrás del menú */
@@ -172,32 +173,39 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* El '0.6' le da la transparencia (60% negro) */
+    background-color: rgba(0, 0, 0, 0.6); /* 60% de opacidad negra */
     z-index: 998;
-    display: none; /* Controlado por JS */
+    opacity: 0;
+    pointer-events: none; /* Evita que bloquee clics mientras está oculto */
+    transition: opacity 0.3s ease; /* Transición suave de transparencia */
+}
+
+/* Cuando el overlay está activo */
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* Permite hacer clic para cerrar */
 }
 
 /* El contenedor del menú lateral */
 .sidebar-menu {
     position: fixed;
     top: 0;
-    left: -365px; /* Comienza escondido a la izquierda */
+    left: 0; /* Lo dejamos fijo en el borde izquierdo */
     width: 365px;
     height: 100%;
-    background-color: white; /* El menú en sí es blanco, como en Amazon */
+    background-color: white;
     z-index: 999;
-    
-    /* 🟢 ESTA LÍNEA LOGRA EL DESLIZAMIENTO SUAVE: */
-    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out; 
-    
     box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+    
+    /* 🟢 El truco: Lo movemos completamente hacia la izquierda fuera de la pantalla */
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease-in-out; /* Animación ultra fluida */
 }
 
-/* Clase activa que empuja el menú hacia adentro */
+/* Cuando el menú está activo, vuelve a su posición original */
 .sidebar-menu.active {
-    left: 0; /* Se mueve a la posición visible */
+    transform: translateX(0);
 }
-
 
 /* Encabezado del menú lateral */
 .sidebar-header {
@@ -221,10 +229,10 @@ body {
     cursor: pointer;
 }
 
-/* Contenido del menú (Enlaces) */
+/* Contenido del menú */
 .sidebar-content {
     padding: 20px 30px;
-    overflow-y: auto; /* Permite hacer scroll si hay muchas opciones */
+    overflow-y: auto;
     height: calc(100% - 50px);
 }
 
@@ -254,4 +262,5 @@ body {
     border-top: 1px solid #ddd;
     margin: 15px 0;
 }
+
 
