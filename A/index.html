@@ -1,5 +1,72 @@
 <!DOCTYPE html>
-<html>
-<head><title>Mi Proyecto</title></head>
-<body><h1>¡Hola Mundo A!</h1></body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encabezado Tipo Amazon</title>
+    <!-- Aquí enlazaremos el archivo CSS más adelante -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <!-- 1. CONTENEDOR PRINCIPAL OSCURO -->
+        <div class="header-main">
+            
+            <!-- Logotipo -->
+            <div class="header-logo">
+                <a href="#">MiTienda</a>
+            </div>
+
+            <!-- Barra de Búsqueda -->
+            <div class="header-search">
+                <select class="search-select">
+                    <option>Todos</option>
+                    <option>Tecnología</option>
+                    <option>Libros</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Buscar producto...">
+                <button class="search-button">🔍</button>
+            </div>
+
+            <!-- Navegación Derecha (Cuentas y Carrito) -->
+            <nav class="header-nav">
+                <div class="nav-item">
+                    <span class="line-1">Hola, Identifícate</span>
+                    <span class="line-2">Cuenta y Listas</span>
+                </div>
+                <div class="nav-item">
+                    <span class="line-1">Devoluciones</span>
+                    <span class="line-2">& Pedidos</span>
+                </div>
+                <div class="nav-item cart">
+                    <span class="cart-icon">🛒</span>
+                    <span class="line-2">Carrito</span>
+                </div>
+            </nav>
+
+        </div>
+
+        <!-- 2. BARRA SECUNDARIA DE CATEGORÍAS -->
+        <div class="header-sub">
+            
+            <!-- Botón del Menú Lateral -->
+            <button class="menu-toggle" id="open-menu">
+                ☰ Todo
+            </button>
+
+            <!-- Enlaces de Categorías -->
+            <nav class="sub-nav">
+                <a href="#">Ofertas del Día</a>
+                <a href="#">Servicio al Cliente</a>
+                <a href="#">Listas de Regalos</a>
+                <a href="#">Vender</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Aquí enlazaremos el archivo JS más adelante -->
+    <script src="script.js"></script>
+</body>
 </html>
