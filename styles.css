@@ -1,0 +1,163 @@
+/* ==========================================
+   1. ESTILOS GENERALES Y RESETEO
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+/* ==========================================
+   2. CONTENEDOR PRINCIPAL OSCURO (header-main)
+   ========================================== */
+.header-main {
+    background-color: #131921; /* Azul noche oscuro */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;       /* Alineación vertical perfecta */
+    justify-content: space-between; /* Distribuye espacio entre bloques */
+    gap: 20px;                 /* Separación mínima entre elementos */
+}
+
+/* Logotipo */
+.header-logo a {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 5px;
+}
+
+.header-logo a:hover {
+    border: 1px solid white;  /* Efecto de borde al pasar el cursor */
+}
+
+/* Barra de Búsqueda Flexible */
+.header-search {
+    display: flex;
+    flex-grow: 1;              /* Hace que la barra ocupe todo el espacio disponible */
+    max-width: 800px;          /* Evita que se estire demasiado en pantallas gigantes */
+    height: 40px;
+}
+
+.search-select {
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 4px 0 0 4px; /* Redondeado solo a la izquierda */
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.search-input {
+    flex-grow: 1;              /* El campo de texto estira para llenar la barra */
+    border: none;
+    padding: 0 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #febd69; /* Naranja Amazon */
+    border: none;
+    border-radius: 0 4px 4px 0; /* Redondeado solo a la derecha */
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #f3a847; /* Naranja más oscuro al pasar el cursor */
+}
+
+/* Navegación Derecha */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;    /* Coloca los textos uno abajo del otro */
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+.nav-item:hover {
+    border: 1px solid white;
+}
+
+.line-1 {
+    font-size: 12px;
+    color: #cccccc;
+}
+
+.line-2 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;       /* El icono y el texto del carrito van alineados horizontalmente */
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.cart-icon {
+    font-size: 22px;
+}
+
+/* ==========================================
+   3. BARRA SECUNDARIA DE CATEGORÍAS (header-sub)
+   ========================================== */
+.header-sub {
+    background-color: #232f3e; /* Gris azulado un poco más claro */
+    color: white;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-toggle {
+    background: none;
+    border: 1px solid transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-toggle:hover {
+    border: 1px solid white;
+}
+
+.sub-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.sub-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+.sub-nav a:hover {
+    border: 1px solid white;
+}
