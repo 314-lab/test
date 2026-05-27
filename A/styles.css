@@ -161,3 +161,93 @@ body {
 .sub-nav a:hover {
     border: 1px solid white;
 }
+/* ==========================================
+   4. MENÚ LATERAL Y FONDO OSCURO
+   ========================================== */
+
+/* Fondo oscuro detrás del menú */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece la pantalla */
+    z-index: 998; /* Por debajo del menú, por encima del encabezado */
+    display: none; /* Oculto por defecto */
+}
+
+/* El contenedor del menú */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -365px; /* Empieza completamente escondido a la izquierda */
+    width: 365px;
+    height: 100%;
+    background-color: white;
+    z-index: 999; /* Siempre al frente de todo */
+    transition: left 0.3s ease; /* Animación suave al deslizarse */
+    box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+}
+
+/* Clase que aplicaremos con JS para mostrar el menú */
+.sidebar-menu.active {
+    left: 0; /* Se desliza hacia adentro de la pantalla */
+}
+
+/* Encabezado del menú lateral */
+.sidebar-header {
+    background-color: #232f3e;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h2 {
+    font-size: 18px;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Contenido del menú (Enlaces) */
+.sidebar-content {
+    padding: 20px 30px;
+    overflow-y: auto; /* Permite hacer scroll si hay muchas opciones */
+    height: calc(100% - 50px);
+}
+
+.sidebar-content h3 {
+    font-size: 14px;
+    color: #111;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.sidebar-content a {
+    display: block;
+    color: #444;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.sidebar-content a:hover {
+    background-color: #f2f2f2;
+    padding-left: 5px;
+    transition: all 0.2s;
+}
+
+.sidebar-content hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+
