@@ -263,4 +263,138 @@ body {
     margin: 15px 0;
 }
 
+/* ==========================================
+   5. DISEÑO DE LA CUADRÍCULA DE PRODUCTOS
+   ========================================== */
+
+/* Contenedor principal con márgenes limpios */
+.main-content {
+    max-width: 1500px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* La Cuadrícula Mágica Responsive */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Columnas dinámicas */
+    gap: 20px; /* Separación uniforme entre productos */
+}
+
+/* Tarjeta Individual de Producto */
+.product-card {
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el botón siempre hacia abajo */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la Imagen */
+.product-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Evita que las fotos se deformen */
+}
+
+/* Información del Producto */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f1111;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    /* Efecto para recortar texto largo a un máximo de 2 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Estrellas de Calificación */
+.product-rating {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.rating-count {
+    color: #007185; /* Azul links de Amazon */
+    margin-left: 5px;
+}
+
+/* Precios al estilo Amazon */
+.product-price {
+    display: flex;
+    align-items: flex-start;
+    color: #0f1111;
+    margin-bottom: 5px;
+}
+
+.currency {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-right: 1px;
+}
+
+.price-main {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.price-fraction {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Detalles de Envío */
+.product-shipping {
+    font-size: 12px;
+    color: #565959;
+    margin-bottom: 15px;
+}
+
+.text-prime {
+    color: #00a8e1; /* Color azul Prime */
+    font-weight: bold;
+}
+
+/* Botón de compra */
+.add-to-cart-btn {
+    background-color: #ffd814; /* Amarillo Amazon */
+    border: 1px solid #fcd200;
+    border-radius: 20px; /* Botón redondeado ovalado */
+    padding: 7px 0;
+    width: 100%;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #f7ca00; /* Amarillo un poco más oscuro */
+}
 
